@@ -1,0 +1,9 @@
+<view class="container">
+<view class="search_input">
+  <input bindinput="inputch" class="search" maxlength="3" placeholder="输入三个以内的汉字" confirm-type="search"/>
+  <button bindtap="translate">转换</button>
+</view>
+  <image mode="left" class="content" src="{{img_url}}"></image>
+  <text>{{tip}}</text>
+  <image class="thinkmoon" src="/asset/thinkmoon.png"></image>
+</view>

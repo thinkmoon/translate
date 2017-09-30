@@ -1,0 +1,3 @@
+<!--pages/community/community.wxml-->
+<text>优秀作品展示</text>
+ <image class="backgroud" src='/asset/backgroud.jpg'></image> 

@@ -1,0 +1,3 @@
+/* pages/community/community.wxss */
+text{color:aliceblue}
+.backgroud{width:750rpx;height: 700rpx;padding-top: 10rpx;}

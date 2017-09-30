@@ -1,0 +1,5 @@
+button{height:65rpx;display: inline-block;line-height:65rpx;}
+.search{height:65rpx;width: 600rpx;display: inline-block;color:aliceblue}
+.thinkmoon{width: 300px;height: 150rpx;}
+.content{padding-top: 10rpx;}
+.search_input{margin-top: 15rpx;height:65rpx;border-radius:4px;border:1px solid #ccc;padding:0rpx;}

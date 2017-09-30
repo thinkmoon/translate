@@ -1,0 +1,10 @@
+<!--pages/guyin/guyin.wxml-->
+<view class="container">
+<view class="search_input">
+  <input bindinput="inputch" class="search" maxlength="1" placeholder="输入一个汉字" confirm-type="search"/>
+  <button bindtap="translate">转换</button>
+</view>
+  <image class="content" src="{{img_url}}"></image>
+  <text>古印转换可能会出现部分汉字显示不正常</text>
+  <image class="thinkmoon" src="/asset/thinkmoon.png"></image>
+</view>
