@@ -1,10 +1,20 @@
-<!--pages/guyin/guyin.wxml-->
-<view class="container">
-<view class="search_input">
-  <input bindinput="inputch" class="search" maxlength="1" placeholder="输入一个汉字" confirm-type="search"/>
-  <button bindtap="translate">转换</button>
-</view>
-  <image class="content" src="{{img_url}}"></image>
-  <text>古印转换可能会出现部分汉字显示不正常</text>
-  <image class="thinkmoon" src="/asset/thinkmoon.png"></image>
+<view class='page'>
+  <view class="img bc_white">
+    <image src="{{img_url}}" mode="left"></image>
+  </view>
+  <view class="weui-cells__title">请输入你要查询的汉字</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input bindinput="inputch" class="weui-input" placeholder="四个字以内" />
+      </view>
+    </view>
+  </view>
+  <button class="weui-btn" bindtap="translate" type="primary">转换</button>
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+      <navigator url="" class="weui-footer__link">指尖魔法屋</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 2016-2017 thinkmoon.cn</view>
+  </view>
 </view>

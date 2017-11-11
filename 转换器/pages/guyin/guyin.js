@@ -1,6 +1,5 @@
 // pages/guyin/guyin.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -63,24 +62,27 @@ Page({
   onShareAppMessage: function () {
   
   },
+
   inputch: function (e) {
     this.setData({
       data_ch: e.detail.value
     })
+    console.log(this.data.data_ch+"写入成功");
   },
   translate: function () {
     var that = this;
     var str = this.data.data_ch;
     if(str = '') return;
     var flag = true;
+console.log(str);
     for (var i = 0; i < str.length; i++) {
-      if (str.charCodeAt(i) < 255) //如果是汉字，则字符串长度加2
+      if (str.charCodeAt(i) < 255)
         flag = false;
     }
     if (flag) {
       wx.request({
-        url: "https://xcx.thinkmoon.cn/guyin/",
-        method: "POST",
+        url: "http://localhost/stamp",
+        method: "GET",
         data: {
           char: this.data.data_ch,
         },
@@ -88,11 +90,12 @@ Page({
           'content-type': 'application/x-www-form-urlencoded'
         },
         success: function (res) {
-          console.log("succssed");
-          console.log(res.data)
+          console.log("request succssed");
+          var url = "http://localhost/stamp/" + res.data;
           that.setData({
-            img_url: "https://xcx.thinkmoon.cn/guyin/"+res.data
+            img_url: url
           })
+          console.log(url)
         }
       })
     } else {
@@ -101,6 +104,5 @@ Page({
         tip: "啊哦！亲，别输入不合法的字符哦！"
       })
     }
-
   },
 })

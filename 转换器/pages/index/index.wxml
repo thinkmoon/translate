@@ -1,9 +1,38 @@
-<view class="container">
-<view class="search_input">
-  <input bindinput="inputch" class="search" maxlength="3" placeholder="输入三个以内的汉字" confirm-type="search"/>
-  <button bindtap="translate">转换</button>
-</view>
-  <image mode="left" class="content" src="{{img_url}}"></image>
-  <text>{{tip}}</text>
-  <image class="thinkmoon" src="/asset/thinkmoon.png"></image>
+<view class='page'>
+  <view class="warning">
+    <button class="weui-btn" type="warn">{{tip}}</button>
+  </view>
+  <view class="warn">
+    <button class="weui-btn bc_yellow">{{warn}}</button>
+  </view>
+  <view class="img bc_white">
+    <image src="{{img_url}}" mode="aspectFit"></image>
+  </view>
+  <view class="weui-cells__title">请输入你要转换的汉字</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input bindinput="inputch" class="weui-input"  placeholder="三个字以内最佳" value="{{data_ch}}"/>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">选择字体</view>
+  <view class="weui-cell weui-cell_select bc_white">
+    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+      <view class="weui-label">字体库</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker bindchange="bindFontChange" value="{{fontID}}" range="{{fonts}}">
+        <view class="weui-select weui-select_in-select-after">{{fonts[fontID]}}</view>
+      </picker>
+    </view>
+  </view>
+  <button bindtap="translate" class="weui-btn" type="primary">转换</button>
+  <view class="weui-cells__tips">小提示:如转换不正常请切换字体库</view>
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+      <navigator url="" class="weui-footer__link">指尖魔法屋</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 2016-2017 thinkmoon.cn</view>
+  </view>
 </view>

@@ -2,36 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/self/self",
-    "pages/community/community",
     "pages/guyin/guyin"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "篆书转换器",
-    "backgroundColor": "#555",
-    "backgroundTextStyle": "black"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "selectedIconPath": "/icon/translate_a.png",
-        "iconPath": "/icon/translate.png",
-        "pagePath": "pages/index/index",
-        "text": "转换"
-      },
-      {
-        "selectedIconPath": "/icon/community_a.png",
-        "iconPath": "/icon/community.png",
-        "pagePath": "pages/guyin/guyin",
-        "text": "古印"
-      },
-      {
-        "selectedIconPath": "/icon/self_a.png",
-        "iconPath": "/icon/self.png",
-        "pagePath": "pages/self/self",
-        "text": "个人"
-      }
-    ]
+    "navigationBarTitleText": "篆书转换器"
   }
-}
+  }
