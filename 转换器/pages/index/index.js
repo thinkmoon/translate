@@ -1,32 +1,11 @@
 //index.js
 //获取应用实例
-// "tabBar": {
-  //   "list": [
-  //     {
-  //       "selectedIconPath": "/icon/community_a.png",
-  //       "iconPath": "/icon/community.png",
-  //       "pagePath": "pages/guyin/guyin",
-  //       "text": "古印"
-  //     },
-  //     {
-  //       "selectedIconPath": "/icon/translate_a.png",
-  //       "iconPath": "/icon/translate.png",
-  //       "pagePath": "pages/index/index",
-  //       "text": "转换"
-  //     },
-  //     {
-  //       "selectedIconPath": "/icon/self_a.png",
-  //       "iconPath": "/icon/self.png",
-  //       "pagePath": "pages/self/self",
-  //       "text": "个人"
-  //     }
-  //   ]
-  // }
 const app = getApp()
+
 var config = require("../../config.js");
 Page({
   data: {
-    img_url: config.service.stampUrl +"./source/白舟篆古印/964e47dab026f322e7fae445abe863bc.jpg",
+    img_url: config.service.resUrl +"res/default.jpg",
     data_ch: "",
   },
   /**
@@ -34,13 +13,26 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    console.log(options.source)
+    console.log("index页面进入参数source为"+options.source)
+    app.set_data();
     if(options.source != null){
       this.setData({
         img_url:options.source,
         data_ch:options.target,
       })
     }
+    wx.getStorage({
+      key: 'display',
+      fail: function (res) {
+        try {
+          wx.setStorageSync('display', "上邪\n我欲与君相知\n长命无绝衰\n山无陵\n江水为竭\n冬雷震震\n夏雨雪\n天地合\n乃敢与君绝\n")
+          console.log("初始化display")
+        } catch (e) {
+          console.log("设置diaplay值错误")
+        }
+      }
+    })
+    
     wx.request({
       url: config.service.stampUrl,
       method: "GET",
@@ -95,7 +87,7 @@ Page({
           console.log("succssed");
           console.log(res.data)
           that.setData({
-            img_url: config.service.stampUrl+res.data
+            img_url: config.service.baseUrl+res.data
           })
         }
       })
@@ -139,4 +131,25 @@ Page({
       fontID: e.detail.value
     })
   },
+  save:function(){
+    wx.downloadFile({
+      url: this.data.img_url, //仅为示例，并非真实的资源
+      complete: function (res) {
+        // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+        console.log("下载文件:"+res)
+        if (res.statusCode === 200) {
+          wx.saveImageToPhotosAlbum({
+            filePath: res.tempFilePath,
+            success:function(res) {
+                app.log("保存文件", res);
+                wx.showModal({
+                  title: '保存成功',
+                  content: '谢谢您的支持' ,
+                })
+            }
+          })
+        }
+      }
+    })
+  }
 })

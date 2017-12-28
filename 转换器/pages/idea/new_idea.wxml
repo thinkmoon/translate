@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="weui-cells__title">意见或反馈</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea bindinput="input_display" class="weui-textarea" placeholder="你觉这个小程序还有哪里需要完善？或者有什么好建议?写下你的想法！开发者会根据你建议的支持数来优先完善" value='{{idea}}' style="height: 10.3em" />
+        <view class="weui-textarea-counter">0/200</view>
+      </view>
+    </view>
+  </view>
+  <button bindtap="send" class="weui-btn" type="primary">寄给开发者</button>
+  <weUI_foot></weUI_foot>
+</view>

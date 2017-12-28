@@ -1,21 +1,10 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* pages/self/self.wxss */
+.page__hd{
+  padding-bottom:20rpx;
+  background-image: url("http://pic.qiantucdn.com/58pic/26/03/66/21q58PICKcX_1024.jpg");
 }
-
-.userinfo-avatar {
+.avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
   border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
 }

@@ -34,3 +34,19 @@ page{
     font-size: 14px;
 }
 
+@font-face {
+  font-family: 'iconfont';  
+  src:url('http://ozqvwwv2s.bkt.clouddn.com/%E6%B1%89%E4%BB%AA%E7%AF%86%E4%B9%A6%E7%B9%81.ttf')
+}
+.red{
+  color:#FF6666;
+}
+.green{
+  color:#1AAD19;
+}
+.blue{
+  color:#8888FF;
+}
+
+
+

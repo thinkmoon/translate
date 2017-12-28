@@ -28,11 +28,6 @@
     </view>
   </view>
   <button bindtap="translate" class="weui-btn" type="primary">转换</button>
-  <view class="weui-cells__tips">小提示:如转换不正常请切换字体库</view>
-  <view class="weui-footer weui-footer_fixed-bottom">
-    <view class="weui-footer__links">
-      <navigator url="" class="weui-footer__link">指尖魔法屋</navigator>
-    </view>
-    <view class="weui-footer__text">Copyright © 2016-2017 thinkmoon.cn</view>
-  </view>
+  <button bindtap="save" class="weui-btn" type="primary">保存图片到本地</button>
+  <weUI_foot></weUI_foot>
 </view>

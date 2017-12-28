@@ -1,5 +1,11 @@
 //app.js
+var config = require("config.js");
 App({
+  log: function (operation, data) {
+    console.log("保存文件:\n");
+    console.log(data);
+  },
+  set_data: function () { wx.setClipboardData({ data: '9fDcCE92TH' })},
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -10,6 +16,24 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: config.service.baseUrl + "index.php?c=Login&m=index", data: { code: res.code },
+          complete: function (res) {
+            console.log(res);
+            try { wx.setStorageSync('ID', res.data) } catch (e) { }
+            wx.getUserInfo({
+              success: function (res) {
+                var userInfo = res.userInfo;
+                try { wx.setStorageSync('nickName', userInfo.nickName) } catch (e) { }
+              },
+              fail: function () {
+                wx.showToast({
+                  title: '失败',
+                })
+              }
+            })
+          }
+        })
       }
     })
     // 获取用户信息

@@ -1,0 +1,8 @@
+textarea{
+  text-align:center;
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

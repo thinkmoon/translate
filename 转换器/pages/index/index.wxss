@@ -3,6 +3,11 @@ image{
   height: 100%;
   border-radius: 5px;
 }
+.iconfont {
+  font-family:"iconfont" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .bc_yellow{background-color: #ffbe00;color: #FFFfff}
 .img{
   background-image: url("https://xcx.thinkmoon.cn/stamp/source/background.jpg");

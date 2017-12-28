@@ -1,0 +1,5 @@
+<!--pages/article/guyin.wxml-->
+<view class='page'>
+<view class='content'><text class="iconfont">{{display}}</text>
+</view>
+</view>
