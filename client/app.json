@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/translate/index",
+    "pages/user/index",
+    "pages/index/index",
+    "pages/display/display",
+    "pages/display/article",
+    "pages/idea/idea",
+    "pages/self/self",
+    "pages/chat/chat",
+    "pages/idea/new_idea",
+    "pages/self/my_like"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#424b50",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "篆书转换器"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "selectedIconPath": "/icon/community_a.png",
+        "iconPath": "/icon/community.png",
+        "pagePath": "pages/display/display",
+        "text": "展板"
+      },
+      {
+        "selectedIconPath": "/icon/translate_a.png",
+        "iconPath": "/icon/translate.png",
+        "pagePath": "pages/translate/index",
+        "text": "转换"
+      },
+      {
+        "selectedIconPath": "/icon/self_a.png",
+        "iconPath": "/icon/self.png",
+        "pagePath": "pages/self/self",
+        "text": "用户"
+      },
+      {
+        "selectedIconPath": "/icon/idea_a.png",
+        "iconPath": "/icon/idea.png",
+        "pagePath": "pages/idea/idea",
+        "text": "建议&反馈"
+      }
+    ]
+  }
+}

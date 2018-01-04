@@ -1,0 +1,38 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title"><image class='avatar' src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}"></image></view>
+        <view class="page__desc">{{logged ? userInfo.nickName : '未登录'}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view>个人介绍</view>
+                    <view style="font-size: 13px;color: #888888;">擅长领域：篆刻</view>
+                </view>
+            </view>
+            <!-- <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">粉丝</view>
+                    <view class="weui-badge" style="margin-left: 5px;">8</view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">关注</view>
+                    <view class="weui-badge" style="margin-left: 5px;">8</view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view> -->
+            <view bindtap="like" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">收藏</view>
+                    <view class="weui-badge" style="margin-left: 5px;">New</view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">详细信息</view>
+            </view>
+        </view>
+    </view>
+    <weUI_foot></weUI_foot>
+</view>

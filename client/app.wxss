@@ -1,0 +1,67 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+.bc_white{background-color: #FFFFFF}
+.my-button{
+  background-color: #8388a6;
+  color: #F8F8F8
+}
+.primary{
+  color:#8388a6;
+}
+page{
+    background-color: #F8F8F8;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.page__hd {
+    padding: 40px;
+}
+.page__bd {
+    padding-bottom: 40px;
+}
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page__ft{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.page__desc {
+    margin-top: 5px;
+    color: #888888;
+    text-align: left;
+    font-size: 14px;
+}
+
+@font-face {
+  font-family: 'iconfont';  
+  src:url('http://ozqvwwv2s.bkt.clouddn.com/%E6%B1%89%E4%BB%AA%E7%AF%86%E4%B9%A6%E7%B9%81.ttf')
+}
+.red{
+  color:#FF5555;
+}
+.green{
+  color:#1AAD19;
+}
+.blue{
+  color:#8888FF;
+}
+
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 

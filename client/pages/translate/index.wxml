@@ -1,0 +1,38 @@
+<view class='page'>
+  <view class="warning">
+    <button class="weui-btn" type="warn">{{tip}}</button>
+  </view>
+  <view class="warn">
+    <button class="weui-btn bc_yellow">{{warn}}</button>
+  </view>
+  <view class="img bc_white">
+    <image bindtap="preview" src="{{img_url}}" mode="aspectFit"></image>
+  </view>
+  <view class="weui-cells__title">请输入你要转换的汉字</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input bindinput="inputch" class="weui-input"  placeholder="三个字以内最佳" value="{{data_ch}}"/>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">选择字体</view>
+  <view class="weui-cell weui-cell_select bc_white">
+    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+      <view class="weui-label">字体库</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker bindchange="bindFontChange" value="{{fontID}}" range="{{fonts}}">
+        <view class="weui-select weui-select_in-select-after">{{fonts[fontID]}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="operation">
+  <button bindtap="translate" class="weui-btn my-button">转换</button>
+  <view class='ico'>
+    <view bindtap="save" class="download"><image src='/icon/download.png'></image></view>
+    <view bindtap="like" class="like"><image src="{{liked ? '/icon/like_a.png' : '/icon/like_a.png'}}"></image></view>
+  </view>
+  </view>
+  <weUI_foot></weUI_foot>
+</view>

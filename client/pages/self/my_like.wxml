@@ -1,0 +1,6 @@
+<!--pages/self/my_like.wxml-->
+<view wx:for="{{arr}}" wx:key="idea" class='line'>
+<view class="img bc_white">
+    <image data-img_url="{{item['img_url']}}" src="{{item['img_url']}}" mode="aspectFit" bindtap="preview"></image>
+  </view>
+</view>
