@@ -1,3 +1,3 @@
 {
-  "usingComponents": {"weUI_foot":"/component/weUI_foot"}
+  "usingComponents": {"weUI_foot":"../component/weUI_foot"}
 }

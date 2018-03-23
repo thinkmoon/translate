@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'zhuan';
+  src: url('http://ozqvwwv2s.bkt.clouddn.com/HYj1gf.ttf?#iefix') format('embedded-opentype'),  
+  url('http://ozqvwwv2s.bkt.clouddn.com/HYj1gf.woff') format('woff'), url('http://ozqvwwv2s.bkt.clouddn.com/HYj1gf.ttf')  format('truetype'), url('http://ozqvwwv2s.bkt.clouddn.com/HYj1gf.svg#HYj1gf') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.zhuan {
+  font-family:"zhuan";
+  font-size:42px;
+  font-style:normal;
+  font-weight: 580;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

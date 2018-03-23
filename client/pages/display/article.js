@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
   },
 
   /**
@@ -15,10 +14,9 @@ Page({
     var str = options.display;
     if(str != null){
       try {
-        console.log("正则替换前"+str)
-        str = str.replace(/tim/g, "\n")
+        str=decodeURI(str);
         wx.setStorageSync('display', str)
-        console.log("正则替换后" + str)
+        console.log("接受到的str："+str);
       } catch (e) {
         console.log("设置diaplay值错误")
       }
@@ -37,12 +35,14 @@ Page({
    */
   onShow: function () {
     var that = this;
+
     wx.getStorage({
       key: 'display',
       success: function (res) {
         console.log("display的值为" + res.data)
         that.setData({
           display: res.data,
+          fontSize: wx.getStorageSync('pt')
         })
       }
     })
@@ -81,11 +81,13 @@ Page({
    */
   onShareAppMessage: function () {
     var str = this.data.display;
-    str=str.replace(/\n/g, "tim")
-    var inUrl = '/pages/article/guyin?display=' + str;
-    console.log("待分享的页内链接为"+inUrl);
+    var pages = getCurrentPages()    //获取加载的页面
+    var currentPage = pages[pages.length - 1]    //获取当前页面的对象
+    var url = currentPage.route
+    var inUrl = url + "?display=" + encodeURI(str);
+    console.log("分享的链接为"+inUrl);
     return {
-      title: '篆书转换器',
+      title: '您的好友给您分享了一段篆文',
       path: inUrl,
       success: function (res) {
         // 转发成功

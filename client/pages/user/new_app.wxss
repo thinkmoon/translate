@@ -1,0 +1,8 @@
+/* pages/user/new_app.wxss */
+@import '/vendor/towxml/style/main.wxss';
+page{
+  background-color: #fff;
+}
+.h2w__blockquote{
+  background-color: #ccc;
+}

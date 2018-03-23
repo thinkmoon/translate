@@ -25,6 +25,6 @@
     </view>
   </view>
   <navigator url="new_idea">
-    <image class="write" src='/icon/add.png'></image>
+    <image class="write" src='../../assets/img/icon/add.png'></image>
   </navigator>
 </view>

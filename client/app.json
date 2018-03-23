@@ -1,46 +1,41 @@
 {
   "pages": [
-    "pages/translate/index",
-    "pages/user/index",
-    "pages/index/index",
-    "pages/display/display",
+    "pages/translate/translate",
+    "pages/user/self",
+    "pages/user/my_like",
+    "pages/display/set",
     "pages/display/article",
     "pages/idea/idea",
-    "pages/self/self",
-    "pages/chat/chat",
     "pages/idea/new_idea",
-    "pages/self/my_like"
+    "pages/user/new_app",
+    "pages/er"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#424b50",
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "篆书转换器"
+    "backgroundColor": "#2b393c",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2b393c",
+    "navigationBarTitleText": "篆书转换器",
+    "navigationBarTextStyle": "#edf8fc"
   },
   "tabBar": {
     "list": [
       {
-        "selectedIconPath": "/icon/community_a.png",
-        "iconPath": "/icon/community.png",
-        "pagePath": "pages/display/display",
+        "selectedIconPath": "/assets/img/icon/community_a.png",
+        "iconPath": "/assets/img/icon/community.png",
+        "pagePath": "pages/display/set",
         "text": "展板"
       },
       {
-        "selectedIconPath": "/icon/translate_a.png",
-        "iconPath": "/icon/translate.png",
-        "pagePath": "pages/translate/index",
+        "selectedIconPath": "/assets/img/icon/translate_a.png",
+        "iconPath": "/assets/img/icon/translate.png",
+        "pagePath": "pages/translate/translate",
         "text": "转换"
       },
       {
-        "selectedIconPath": "/icon/self_a.png",
-        "iconPath": "/icon/self.png",
-        "pagePath": "pages/self/self",
-        "text": "用户"
-      },
-      {
-        "selectedIconPath": "/icon/idea_a.png",
-        "iconPath": "/icon/idea.png",
-        "pagePath": "pages/idea/idea",
-        "text": "建议&反馈"
+        "selectedIconPath": "/assets/img/icon/self_a.png",
+        "iconPath": "/assets/img/icon/self.png",
+        "pagePath": "pages/user/self",
+        "text": "我"
       }
     ]
   }

@@ -1,22 +1,5 @@
 /* pages/article/guyin.wxss */
-
-.iconfont {
-  font-family:"iconfont" !important;
-  font-size:42px;
-  font-style:normal;
-  font-weight: 580;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 .content{
-  background-image: url('http://ozqvwwv2s.bkt.clouddn.com/paper.jpg');
-  background-size: 750rpx 100%;
-  min-height: 1024rpx;
   text-align: center;
   padding: 20px 5px 20px 5px;
 }
-textarea{
-  width: 750rpx;
-  height: 1024rpx;
-}
-

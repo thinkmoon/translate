@@ -1,5 +1,5 @@
 <!--pages/article/guyin.wxml-->
 <view class='page'>
-<view class='content'><text class="iconfont">{{display}}</text>
+<view class='content'><text class="zhuan" style="font-size:{{fontSize}}pt">{{display}}</text>
 </view>
 </view>

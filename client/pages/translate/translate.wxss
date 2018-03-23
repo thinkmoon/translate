@@ -1,0 +1,15 @@
+/* pages/translate/translate.wxss */
+
+.show-panel,canvas{
+  background-color: #fff;
+  height: 350rpx;
+  width: 730rpx;
+  margin: 10rpx 10rpx;
+  border-radius: 5rpx;
+  box-shadow: 5px 5px 3px 3px #ccc;}
+image{
+  border-radius: 5px;
+}
+input{
+  text-align:center;
+}
