@@ -3,8 +3,9 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'http://127.0.0.1';
+var host = 'https://320632942.thinkmoon.cn/weapp';
 
+var stamp_host = 'https://mp.thinkmoon.cn';
 
 var config = {
 
@@ -25,8 +26,11 @@ var config = {
 
     // 上传图片接口
     uploadUrl: `${host}/upload`,
-
-    stampUrl: `http://audit.thinkmoon.cn:39999`
+  },
+  stamp:{
+    stamp_host,
+    img_host:`http://mp.thinkmoon.cn`
   }
 };
+
 module.exports = config;

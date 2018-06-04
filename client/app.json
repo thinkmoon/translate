@@ -7,8 +7,7 @@
     "pages/display/article",
     "pages/idea/idea",
     "pages/idea/new_idea",
-    "pages/user/new_app",
-    "pages/er"
+    "pages/web"
   ],
   "window": {
     "backgroundColor": "#2b393c",

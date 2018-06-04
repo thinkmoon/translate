@@ -8,10 +8,13 @@ var that;
 //显示当前的字体库
 var showFont = function(){
   wx.request({
-    url: config.service.baseUrl + 'Stamp/showFont',
+    url: config.stamp.stamp_host,
     success: function (res) {
       console.log(res);
       that.setData({ fonts: res.data })
+    },
+    complete:function(res){
+      console.log(res);
     }
   })
 }
@@ -27,12 +30,13 @@ var showError = function(content){
     });
   }, 5000);
 }
-var setStr=function(str){
+var setStr=function(str,site=0){
   var url = [];
   var i;
   for (i = 0; i < str.length; i++) {
-    url.push(config.service.stampUrl + "?str=" + str[i]);
+    url.push(config.stamp.img_host + ":39999?str=" + str[i] +"&site=" + site);
   }
+  console.log(url);
   that.setData({
     img_arr: url,
     width: 100 / (i) < 10 ? 10 : 100 / (i),
@@ -47,7 +51,7 @@ var judgeInput = function(str){
     return;
   } 
   else{
-    setStr(str);
+    setStr(str,that.data.fontID);
   }
 }
 //-------- Page函数 ----------
@@ -65,10 +69,6 @@ Page({
     that=this;
     showFont();
     setStr("家");
-  },
-  //预览函数
-  preview: function () {
-    wx.previewImage({current: config.service.baseUrl, urls: this.data.img_arr})
   },
   //转换函数
   translate: function () {
@@ -93,57 +93,6 @@ Page({
     console.log('picker Fonts 发生选择改变，携带值为', e.detail.value);
     this.setData({
       fontID: e.detail.value
-    })
-  },
-  save: function () {
-    wx.downloadFile({
-      url: this.data.img_url,
-      complete: function (res) {
-        // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
-        console.log("下载文件:" + res)
-        if (res.statusCode === 200) {
-          wx.saveImageToPhotosAlbum({
-            filePath: res.tempFilePath,
-            success: function (res) {
-              app.log("保存文件", res);
-              wx.showModal({
-                title: '保存成功',
-                content: '谢谢您的支持',
-              })
-            }
-          })
-        }
-      }
-    })
-  },
-  like: function () {
-    app.doRequest(config.service.baseUrl + "stamp/like", { 'img_url': this.data.img_url }
-  ,false);
-    wx.setStorageSync("like_num", Number(wx.getStorageSync("like_num")) + Number(1))
-    wx.showModal({
-      title: '收藏成功',
-      content: '是否跳转到收藏页？',
-      success: function (res) {
-        if (res.confirm) {
-          wx.navigateTo({url: '../user/my_like'})
-        } 
-      }
-    })
-  },
-  longpress: function () {
-    wx.showActionSheet({
-      itemList: ['收藏', '下载'],
-      itemColor: "#2b393c",
-      success: function (res) {
-        if (res.tapIndex == 0) {
-          that.like()
-        } else {
-          that.save()
-        }
-      },
-      fail: function (res) {
-        console.log(res.errMsg)
-      }
     })
   },
 })

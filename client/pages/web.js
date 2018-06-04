@@ -1,4 +1,5 @@
-// pages/er.js
+// pages/user/new_app.js
+const app = getApp();
 Page({
 
   /**
@@ -12,7 +13,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.showLoading({
+      title: '加载中>>',
+    })
+    const _ts = this;
+    //请求markdown文件，并转换为内容
+    wx.request({
+      url: options.url,
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: (res) => {
+        let data = app.towxml.toJson(res.data, 'markdown');
+        _ts.setData({
+          article: data
+        });
+        wx.hideLoading()
+      }
+    });
   },
 
   /**
@@ -26,9 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const ctx = wx.createCanvasContext('myCanvas')
-    ctx.drawImage("http://127.0.0.1:8888?str=w", 0, 0, 150, 100)
-    ctx.draw()
+    
   },
 
   /**
