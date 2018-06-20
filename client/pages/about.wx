@@ -1,0 +1,70 @@
+<template>
+  <view class="page">
+  <view class="page__hd">
+  <image src="{{src}}" />
+  </view>
+  <view class='page__bd'>
+    <view class="weui-cells weui-cells_after-title">
+    </view>
+     <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="web?url=https://coding.net/u/thinkmon/p/article/git/raw/master/%25E6%2584%258F%25E8%25A7%2581%25E5%258F%258D%25E9%25A6%2588.md" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="{{icon_idea}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;" />
+                </view>
+                <view class="weui-cell__bd">意见&反馈</view>
+            </navigator>
+            <navigator url="web?url=https://coding.net/u/thinkmon/p/article/git/raw/master/README.md" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="{{icon_idea}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"/>
+                </view>
+                <view class="weui-cell__bd">版本说明</view>
+                <view wx:if="{{new_app}}" class="weui-badge" style="margin-left: 5px;">NEW</view>
+            </navigator>
+        </view>
+  </view>
+  <we_foot></we_foot>
+</view>
+</template>
+
+<script>
+var Bmob = require('../static/utils/Bmob.min.js');
+export default {
+  config: {
+    usingComponents: {"we_foot": "../packages/we_foot"},
+    navigationBarTitleText: '关于我们'
+  },
+  data: {},
+  onShow (){
+    var aim = "http://mp.thinkmoon.cn:39999?str=篆&site=" + new Date().getDay();
+    this.setData({
+      src: aim})
+    Bmob.initialize("99cae4b91a08eaae33f99906500a822b", "9e915cd90d0a30c4668553d1f6edcbc9");
+    Bmob.User.auth().then(res => {
+      console.log(res)
+      console.log('一键登陆成功')
+
+    }).catch(err => {
+      console.log(err)
+    });
+  }
+}
+</script>
+
+<style lang="less">
+.page__hd{
+  padding-bottom:20rpx;
+  background-image: url("http://pic.qiantucdn.com/58pic/26/03/66/21q58PICKcX_1024.jpg");
+  height: 200px;
+  background-size:cover;
+}
+.avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+image{
+  height: 100%;
+  width: 100%;
+}
+</style>

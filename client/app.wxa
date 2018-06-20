@@ -1,0 +1,93 @@
+<template>
+  <page></page>
+</template>
+
+<script>
+import system from './static/utils/system'
+
+export default {
+  config: {
+    usingComponents: {},
+    pages: [
+      'pages/functionNav',
+      'pages/translate',
+      'pages/about',
+      'pages/functions/display/index',
+      'pages/functions/translate/index',
+      'pages/functions/display/display',
+      'pages/web'
+    ],
+    window: {
+      backgroundTextStyle: 'dark',
+      backgroundColor: '#2b393c',
+      navigationBarBackgroundColor: '#2b393c',
+      navigationBarTitleText: '篆书转换器',
+      navigationBarTextStyle: '#edf8fc'
+    },
+    tabBar: {
+      list: [{
+          selectedIconPath: '/static/img/icon/community_a.png',
+          iconPath: '/static/img/icon/community.png',
+          pagePath: 'pages/functionNav',
+          text: '功能'
+        },
+        {
+          selectedIconPath: '/static/img/icon/translate_a.png',
+          iconPath: '/static/img/icon/translate.png',
+          pagePath: 'pages/translate',
+          text: '转换'
+        },
+        {
+          selectedIconPath: '/static/img/icon/self_a.png',
+          iconPath: '/static/img/icon/self.png',
+          pagePath: 'pages/about',
+          text: '关于'
+        }
+      ]
+    },
+    networkTimeout: {
+      request: 10000
+    },
+    theme: {
+      'theme-color': '#42b983'
+    }
+  },
+  globalData: {},
+  onLaunch() {
+    system.attachInfo()
+
+  },
+  onShow() {},
+  onHide() {},
+}
+</script>
+
+<style lang="less">
+@import './static/styles/index.less';
+@import './static/styles/weui/weui.wxss';
+
+page {
+  background-color: #EEEEEE;
+  font-size: 16px;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'Glyphicons';
+  src: url('//ozqvwwv2s.bkt.clouddn.com/HYj1gf.ttf') format('embedded-opentype'),  
+       url('//ozqvwwv2s.bkt.clouddn.com/HYj1gf.woff') format('woff'),
+       url('//ozqvwwv2s.bkt.clouddn.com/HYj1gf.ttf')  format('truetype'),
+       url('//ozqvwwv2s.bkt.clouddn.com/HYj1gf.svg') format('svg');
+}
+.zhuan {
+  font-family:"zhuan";
+  font-size:42px;
+  font-style:normal;
+  font-weight: 580;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.btn {
+  background-color: @theme-color;
+}
+</style>

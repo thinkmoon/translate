@@ -1,0 +1,107 @@
+<template>
+  <view class="page">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea bindinput="input_display" class="weui-textarea" placeholder="请输入你要展示的内容" value='{{display}}' style="height: 10.3em" />
+      </view>
+    </view>
+    <view class="weui-textarea-counter">{{character}}/150</view>
+  </view>
+ <view class="weui-cells__title">选择字体</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">字体库</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindFontChange" value="{{fontID}}" range="{{fonts}}">
+            <view class="weui-select weui-select_in-select-after">{{fonts[fontID]}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  <view class="weui-btn-area">
+    <button bindtap="display" class="weui-btn btn">展示</button>
+  </view>
+  <we_foot></we_foot>
+</view>
+</template>
+
+<script>
+import config from "../../../static/data/config"
+export default {
+  config: {
+    usingComponents: {"we_foot": "../../../packages/we_foot"},
+    navigationBarTitleText: '设置内容'
+  },
+  data: {
+    character:"0",
+    display: "天地玄黄",
+    fontID: 0
+    },
+  input_display: function (e) {
+    if (e.detail.value.length < 150){
+      var that = this;
+      this.setData({
+        display: e.detail.value,
+        character: e.detail.value.length
+      })
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '不支持输入超过50个字',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+  },
+  display: function () {
+    var display = this.data.display;
+    var site = this.data.fontID
+    console.log("设置的display值" + display + "site:" + site)
+    wx.navigateTo({
+      url: 'display?str='+display+'&site='+site
+    })
+  },
+  //显示字体
+  showFont(){
+    var that = this;
+    var options={
+      url     : config.stamp.stamp_host,
+      success : function (res) {that.setData({ fonts: res.data })}
+    };
+    wx.request(options);
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.showFont();
+  },
+   bindFontChange(e) {
+    console.log('picker Fonts 发生选择改变，携带值为', e.detail.value);
+    this.setData({
+      fontID: e.detail.value
+    })
+  }
+}
+</script>
+
+<style lang="less">
+page{
+  background-color:#fff;
+}
+.section{
+  background-color: #fff;
+  padding-bottom: 5px;
+}
+textarea{
+  text-align:center;
+}
+</style>

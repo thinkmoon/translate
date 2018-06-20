@@ -1,0 +1,60 @@
+<template>
+  <view class="page">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea bindinput="input_display" class="weui-textarea" placeholder="请输入你要翻译的内容" value='{{display}}' style="height: 10.3em" />
+      </view>
+    </view>
+    <view class="weui-textarea-counter">{{character}}/50</view>
+  </view>
+  <view class="weui-btn-area">
+    <button bindtap="display" class="weui-btn btn">翻译</button>
+  </view>
+  <we_foot></we_foot>
+</view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {"we_foot": "../../../packages/we_foot"},
+    navigationBarTitleText: '文言文翻译'
+  },
+  data: {character:"0"},
+   input_display: function (e) {
+    if (e.detail.value.length < 50){
+      var that = this;
+      this.setData({
+        display: e.detail.value,
+      })
+      wx.getStorage({
+        key: 'display',
+        success: function (res) {
+          that.setData({
+            character: e.detail.value.length,
+          })
+        }
+      })
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '不支持输入超过50个字',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+  },
+  onShow(){
+  }
+}
+</script>
+
+<style lang="less">
+
+</style>

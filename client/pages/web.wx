@@ -1,0 +1,36 @@
+<template>
+  <view class='page'>
+    <import src="../static/utils/wemark/wemark.wxml"/>
+    <template is="wemark" data="{{...wemark}}"></template>
+  </view>
+</template>
+<script>
+var wemark = require('../static/utils/wemark/wemark')
+export default {
+  config: {
+    navigationBarTitleText: 'web'
+  },
+  data: {},
+  onLoad(options){
+    var that = this;
+    wx.request({
+      url: options.url,
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: (res) => {
+        wemark.parse(res.data, this, {name: 'wemark'})
+        wx.hideLoading()
+      }
+    });
+  }
+}
+</script>
+
+<style lang="less">
+@import "../static/utils/wemark/wemark.wxss";
+.page{
+  background-color: #fff;
+  padding: 10px 10px 10px 10px ;
+}
+</style>
