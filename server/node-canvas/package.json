@@ -1,0 +1,54 @@
+{
+  "name": "canvas",
+  "description": "Canvas graphics API backed by Cairo",
+  "version": "2.0.0-alpha.12",
+  "author": "TJ Holowaychuk <tj@learnboost.com>",
+  "main": "index.js",
+  "browser": "browser.js",
+  "contributors": [
+    "Nathan Rajlich <nathan@tootallnate.net>",
+    "Rod Vagg <r@va.gg>",
+    "Juriy Zaytsev <kangax@gmail.com>"
+  ],
+  "keywords": [
+    "canvas",
+    "graphic",
+    "graphics",
+    "pixman",
+    "cairo",
+    "image",
+    "images",
+    "pdf"
+  ],
+  "homepage": "https://github.com/Automattic/node-canvas",
+  "repository": "git://github.com/Automattic/node-canvas.git",
+  "scripts": {
+    "prebenchmark": "node-gyp build",
+    "benchmark": "node benchmarks/run.js",
+    "pretest": "node-gyp build",
+    "test": "standard examples/*.js test/server.js test/public/*.js benchmark/run.js util/has_lib.js browser.js index.js && mocha test/*.test.js",
+    "pretest-server": "node-gyp build",
+    "test-server": "node test/server.js",
+    "install": "node-pre-gyp install --fallback-to-build"
+  },
+  "binary": {
+    "module_name": "canvas-prebuilt",
+    "module_path": "build/Release",
+    "host": "https://github.com/node-gfx/node-canvas-prebuilt/releases/download/",
+    "remote_path": "v{version}"
+  },
+  "dependencies": {
+    "node-pre-gyp": "^0.9.0",
+    "nan": "^2.4.0"
+  },
+  "devDependencies": {
+    "assert-rejects": "^0.1.1",
+    "express": "^4.14.0",
+    "mocha": "^3.1.2",
+    "standard": "^8.5.0"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "license": "MIT"
+}
