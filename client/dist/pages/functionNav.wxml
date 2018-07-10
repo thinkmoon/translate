@@ -20,7 +20,7 @@
         </view>
       </view>
     </view>
-
   </view>
+  <view style="height:30px"></view>
   <we_foot _pid="{{_pid}}"></we_foot>
 </view>

@@ -15,8 +15,8 @@
             <view>更多</view>
           </ui-col>
         </ui-row>
-
       </view>
+      <view style="height:30px"></view>
       <we_foot></we_foot>
   </view>
 </template>
