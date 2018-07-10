@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="content">
+    <image bindtap="preview" src="{{img_src}}" str="{{str}}" site="{{site}}/" />
+  </view>
+  <view class="weui-btn-area">
+    <button bindtap="save" class="weui-btn btn">高清下载</button>
+  </view>
+  <we_foot _pid="{{_pid}}"></we_foot>
+</view>

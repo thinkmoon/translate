@@ -1,0 +1,15 @@
+<view class="page">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea bindinput="input_display" class="weui-textarea" placeholder="请输入你要翻译的内容" value="{{display}}" style="height: 10.3em">
+        </textarea>
+      </view>
+    </view>
+    <view class="weui-textarea-counter">{{character}}/50</view>
+  </view>
+  <view class="weui-btn-area">
+    <button bindtap="display" class="weui-btn btn">翻译</button>
+  </view>
+  <we_foot _pid="{{_pid}}"></we_foot>
+</view>

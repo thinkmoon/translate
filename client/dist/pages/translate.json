@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ui-mask": "../packages/touchui-wx-components/ui-mask/dist/index",
+    "we_foot": "../packages/we_foot/index"
+  },
+  "navigationBarTitleText": "篆书转换器"
+}

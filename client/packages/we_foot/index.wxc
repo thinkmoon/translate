@@ -1,5 +1,8 @@
 <template>
   <view class="weui-footer weui-footer_fixed-bottom">
+            <view><ad unit-id="adunit-5c4e2f8c89c39fc9"></ad></view>
+             <view class="weui-footer__text">为了维持小程序的正常运行，我们加入了广告</view>
+             <view class="weui-footer__text">您可以通过点击广告来支持我们</view>
             <view class="weui-footer__links">
                 <navigator url="/pages/admire/admire" class="weui-footer__link">指尖魔法屋</navigator>
                 <navigator url="" class="weui-footer__link"><text class='zhuan'>篆书转换器</text></navigator>

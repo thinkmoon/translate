@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "we_foot": "../packages/we_foot/index"
+  },
+  "navigationBarTitleText": "功能导航"
+}

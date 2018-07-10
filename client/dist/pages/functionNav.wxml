@@ -1,0 +1,26 @@
+<view>
+  <view class="nav_content">
+    <view class="ui-row" style="height:100px;">
+      <view bindtap="navTo" data-aim="display" class="ui-col ui-col-align-center align-center valign-middle" style="">
+        <view class="ui-col-content align-center valign-middle">
+          <span type="liwu" size="24" color="#fff" class="nav_1 ui-icon icon-liwu" style="color: #fff;font-size: 24px;"></span>
+          <view>展板</view>
+        </view>
+      </view>
+      <view bindtap="show" data-aim="该功能正在开发中" class="ui-col ui-col-align-center align-center valign-middle" style="">
+        <view class="ui-col-content align-center valign-middle">
+          <span type="dict" size="24" color="#fff" class="nav_2 ui-icon icon-dict" style="color: #fff;font-size: 24px;"></span>
+          <view>文言文翻译</view>
+        </view>
+      </view>
+      <view bindtap="show" data-aim="更多功能敬请期待" class="ui-col ui-col-align-center align-center valign-middle" style="">
+        <view class="ui-col-content align-center valign-middle">
+          <span type="more" size="24" color="#fff" class="nav_3 ui-icon icon-more" style="color: #fff;font-size: 24px;"></span>
+          <view>更多</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <we_foot _pid="{{_pid}}"></we_foot>
+</view>

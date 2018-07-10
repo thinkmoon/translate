@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/functionNav",
+    "pages/translate",
+    "pages/about",
+    "pages/functions/display/index",
+    "pages/functions/translate/index",
+    "pages/functions/display/display",
+    "pages/web"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#2b393c",
+    "navigationBarBackgroundColor": "#2b393c",
+    "navigationBarTitleText": "篆书转换器",
+    "navigationBarTextStyle": "#edf8fc"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "selectedIconPath": "/static/img/icon/community_a.png",
+        "iconPath": "/static/img/icon/community.png",
+        "pagePath": "pages/functionNav",
+        "text": "功能"
+      },
+      {
+        "selectedIconPath": "/static/img/icon/translate_a.png",
+        "iconPath": "/static/img/icon/translate.png",
+        "pagePath": "pages/translate",
+        "text": "转换"
+      },
+      {
+        "selectedIconPath": "/static/img/icon/self_a.png",
+        "iconPath": "/static/img/icon/self.png",
+        "pagePath": "pages/about",
+        "text": "关于"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "theme": {
+    "theme-color": "#42b983"
+  }
+}
