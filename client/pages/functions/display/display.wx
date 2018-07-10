@@ -21,7 +21,7 @@ export default {
     img_src:"https://xcx.thinkmoon.cn?str=thinkmoon&site=0"
   },
   onLoad(options){
-    var img = "https://xcx.thinkmoon.cn?" + "str=" + options.str + "&site=" + options.site;
+    var img = "https://xcx.thinkmoon.cn?" + "str=" + encodeURI(options.str) + "&site=" + options.site;
     this.setData({
       img_src: img,
       str: options.str,

@@ -145,13 +145,10 @@ setStr(str,site=0){
   box-shadow: 5px 5px 3px 3px #ccc;}
 image{
   border-radius: 5px;
+  display:inline-block;
 }
 input{
   text-align:center;
-}
-image{
-  height: 100vh;
-  width: 100%;
 }
 .fixed-view-content{
   width: 65%;

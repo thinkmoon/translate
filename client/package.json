@@ -1,10 +1,9 @@
 {
-  "name": "ee",
+  "name": "Zhuan_Converter",
   "description": "篆书转换器-小程序",
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "parse-svg-path": "^0.1.2",
     "touchui-wx-components": "^1.0.0"
   },
   "devDependencies": {

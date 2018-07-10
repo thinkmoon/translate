@@ -8,17 +8,24 @@
     </view>
      <view class="weui-cells__title"></view>
         <view class="weui-cells weui-cells_after-title">
-            <navigator url="web?url=https://coding.net/u/thinkmon/p/article/git/raw/master/%25E6%2584%258F%25E8%25A7%2581%25E5%258F%258D%25E9%25A6%2588.md" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="web?url=https://coding.net/u/thinkmon/p/article/git/raw/master/%25E6%2584%258F%25E8%25A7%2581%25E5%258F%258D%25E9%25A6%2588.md&title=意见反馈" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__hd">
                     <image src="{{icon_idea}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;" />
                 </view>
                 <view class="weui-cell__bd">意见&反馈</view>
             </navigator>
-            <navigator url="web?url=https://coding.net/u/thinkmon/p/article/git/raw/master/README.md" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="web?url=https://coding.net/u/thinkmon/p/article/git/raw/master/%25E7%2589%2588%25E6%259C%25AC%25E8%25AF%25B4%25E6%2598%258E.md&title=版本说明" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__hd">
                     <image src="{{icon_idea}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"/>
                 </view>
                 <view class="weui-cell__bd">版本说明</view>
+                <view wx:if="{{new_app}}" class="weui-badge" style="margin-left: 5px;">NEW</view>
+            </navigator>
+            <navigator url="web?url=https://coding.net/u/thinkmon/p/article/git/raw/master/README.md&title=关于软件" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="{{icon_idea}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"/>
+                </view>
+                <view class="weui-cell__bd">关于软件</view>
                 <view wx:if="{{new_app}}" class="weui-badge" style="margin-left: 5px;">NEW</view>
             </navigator>
         </view>

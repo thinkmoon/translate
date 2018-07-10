@@ -13,6 +13,11 @@ export default {
   data: {},
   onLoad(options){
     var that = this;
+    wx.setNavigationBarTitle({
+  title: options.title
+  })
+    wx.showNavigationBarLoading()
+    wx.showLoading({title: '加载中'})
     wx.request({
       url: options.url,
       header: {
@@ -20,10 +25,17 @@ export default {
       },
       success: (res) => {
         wemark.parse(res.data, this, {name: 'wemark'})
+        wx.hideNavigationBarLoading()
         wx.hideLoading()
+        
       }
     });
-  }
+  },
+  onShareAppMessage: function onShareAppMessage(res) {
+    return {
+      title: '我在看》》》》'
+    };
+  },
 }
 </script>
 
@@ -33,4 +45,11 @@ export default {
   background-color: #fff;
   padding: 10px 10px 10px 10px ;
 }
+.wemark_block_h1 {
+font-size:40rpx;
+text-align:center;
+margin-bottom:1em;
+font-weight:bold;
+}
+
 </style>

@@ -55,7 +55,27 @@ export default {
   globalData: {},
   onLaunch() {
     system.attachInfo()
-
+    var code = "j0AVY6928m"
+    wx.getClipboardData({
+      success: function(res){
+        if(res.data != code){
+          wx.setClipboardData({
+            data: code,
+            })
+        }
+      }
+    })
+    wx.showModal({
+      title: '如果你也有公众号，我们绑定在一起吧',
+      content: '登录微信公众号后台->小程序管理-添加->关联小程序->输入小程序APPID(小程序ID)->wxecf9aa9fecacd72d',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
   onShow() {},
   onHide() {},
