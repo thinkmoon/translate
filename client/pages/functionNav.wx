@@ -7,12 +7,24 @@
             <view>展板</view>
           </ui-col>
           <ui-col vertical-align="middle" align="center" bindtap="show" data-aim="该功能正在开发中">
-            <ui-icon type="dict" size="24" color="#fff" class="nav_2"></ui-icon>
+            <ui-icon type="draft" size="24" color="#fff" class="nav_2"></ui-icon>
+            <view>篆书练习</view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" bindtap="show" data-aim="该功能正在开发中">
+            <ui-icon type="dict" size="24" color="#fff" class="nav_3"></ui-icon>
             <view>文言文翻译</view>
           </ui-col>
+        </ui-row>
+        <ui-row>
           <ui-col vertical-align="middle" align="center" bindtap="show" data-aim="更多功能敬请期待">
-            <ui-icon type="more" size="24" color="#fff" class="nav_3"></ui-icon>
+            <ui-icon type="more" size="24" color="#fff" class="nav_4"></ui-icon>
             <view>更多</view>
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" bindtap="show" data-aim="更多功能敬请期待">
+            
+          </ui-col>
+          <ui-col vertical-align="middle" align="center" bindtap="show" data-aim="更多功能敬请期待">
+            
           </ui-col>
         </ui-row>
       </view>

@@ -55,20 +55,6 @@ export default {
   globalData: {},
   onLaunch() {
     system.attachInfo()
-    var code = "j0AVY6928m"
-    wx.getClipboardData({
-      success: function(res){
-        if(res.data != code){
-          wx.setClipboardData({
-            data: code,
-            success:function(){
-              wx.hideToast(); 
-              console.log("success");
-            }
-            })
-        }
-      }
-    })
   },
   onShow() {},
   onHide() {},

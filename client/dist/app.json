@@ -6,7 +6,8 @@
     "pages/functions/display/index",
     "pages/functions/translate/index",
     "pages/functions/display/display",
-    "pages/web"
+    "pages/web",
+    "pages/functions/draft/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",

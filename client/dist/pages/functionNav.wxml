@@ -9,14 +9,32 @@
       </view>
       <view bindtap="show" data-aim="该功能正在开发中" class="ui-col ui-col-align-center align-center valign-middle" style="">
         <view class="ui-col-content align-center valign-middle">
-          <span type="dict" size="24" color="#fff" class="nav_2 ui-icon icon-dict" style="color: #fff;font-size: 24px;"></span>
+          <span type="draft" size="24" color="#fff" class="nav_2 ui-icon icon-draft" style="color: #fff;font-size: 24px;"></span>
+          <view>篆书练习</view>
+        </view>
+      </view>
+      <view bindtap="show" data-aim="该功能正在开发中" class="ui-col ui-col-align-center align-center valign-middle" style="">
+        <view class="ui-col-content align-center valign-middle">
+          <span type="dict" size="24" color="#fff" class="nav_3 ui-icon icon-dict" style="color: #fff;font-size: 24px;"></span>
           <view>文言文翻译</view>
+        </view>
+      </view>
+    </view>
+    <view class="ui-row" style="">
+      <view bindtap="show" data-aim="更多功能敬请期待" class="ui-col ui-col-align-center align-center valign-middle" style="">
+        <view class="ui-col-content align-center valign-middle">
+          <span type="more" size="24" color="#fff" class="nav_4 ui-icon icon-more" style="color: #fff;font-size: 24px;"></span>
+          <view>更多</view>
         </view>
       </view>
       <view bindtap="show" data-aim="更多功能敬请期待" class="ui-col ui-col-align-center align-center valign-middle" style="">
         <view class="ui-col-content align-center valign-middle">
-          <span type="more" size="24" color="#fff" class="nav_3 ui-icon icon-more" style="color: #fff;font-size: 24px;"></span>
-          <view>更多</view>
+
+        </view>
+      </view>
+      <view bindtap="show" data-aim="更多功能敬请期待" class="ui-col ui-col-align-center align-center valign-middle" style="">
+        <view class="ui-col-content align-center valign-middle">
+
         </view>
       </view>
     </view>
